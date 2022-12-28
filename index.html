@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Kisan Bhartiya</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script>
     function toggleMenu() {
       var menu = document.querySelector('nav');
@@ -11,23 +12,60 @@
     var button = document.querySelector('header button');
     button.addEventListener('click', toggleMenu);
   </script>
-   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header>
-    <h1>Kisan Bhartiya</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1 class="logo">Kisan Bhartiya</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <main>
-    <h2>Welcome to Kisan Bhartiya</h2>
-    <p>We are an AgriTech startup that aims to revolutionize the way farmers in India grow their crops. Our innovative solutions help farmers increase their productivity, reduce costs, and improve their livelihoods.</p>
+    <section class="hero">
+      <div class="container">
+        <h2>Welcome to Kisan Bhartiya</h2>
+        <p>We are an AgriTech startup that aims to revolutionize the way farmers in India grow their crops. Our innovative solutions help farmers increase their productivity, reduce costs, and improve their livelihoods.</p>
+        <a href="#" class="button">Learn More</a>
+      </div>
+    </section>
+    <section class="features">
+      <div class="container">
+        <h3>Our Products and Services</h3>
+        <div class="feature">
+          <img src="assets/img/kisan-bharatiya.png" alt="Feature 1">
+          <h4>Feature 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada leo velit, at ornare ligula dictum a.</p>
+        </div>
+        <div class="feature">
+          <img src="assets/img/kisan-bharatiya.png" alt="Feature 2">
+          <h4>Feature 2</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada leo velit, at ornare ligula dictum a.</p>
+        </div>
+        <div class="feature">
+          <img src="assets/img/kisan-bharatiya.png" alt="Feature 3">
+          <h4>Feature 3</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada leo velit, at ornare ligula dictum a.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="container">
+        <h3>Ready to transform your farm?</h3>
+        <a href="#" class="button">Contact Us</a>
+      </div>
+    </section>
   </main>
+  <footer>
+    <div class="container">
+      <p>Copyright &copy; 2021 Kisan Bhartiya</p>
+    </div>
+  </footer>
 </body>
 </html>
