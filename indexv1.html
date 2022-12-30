@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kisan Bhartiya</title>
+  <link href='https://fonts.googleapis.com/css?family=Inter:800' rel='stylesheet'>
+  <script>
+    // Get a reference to the range input element
+    const darkModeSlider = document.getElementById('dark-mode-slider');
+  
+    // Add an event listener to toggle between light and dark mode when the slider value changes
+    darkModeSlider.addEventListener('input', () => {
+      if (darkModeSlider.value == 1) {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+      } else {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+      }
+    });
+  </script>
+  <style>
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+    body.light-mode {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    /* background: url('src/assets/idea1.png'), url('src/assets/idea2.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    }
+    body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+    
+
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    }
+    .container {
+    display: flex;
+    align-items: center;
+    }
+
+    .title {
+    margin: 0;
+    font-size: 28px;
+    flex: 0 0 auto;
+    }
+    nav {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    align-items: center;
+    }
+
+    nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;   
+    }
+
+    nav li {
+    margin: 0 10px;
+    }
+
+    nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    }
+
+    .switch {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 28px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+    input:checked + .slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+    }
+
+    .slider.round {
+    border-radius: 28px;
+    }
+
+    .slider.round:before {
+    border-radius: 50%;
+    }
+
+    main {
+    padding: 20px;
+    }
+
+    h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 96px;
+    color: #0CD983;
+    margin: 0;
+    text-align: left;
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    }
+
+    p {
+    font-size: 24px;
+    line-height: 1.5;
+    align-self: flex-end;  
+    height: calc(24px * 1.5 * 7);
+    overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h4 class="title">Kisan Bhartiya</h4>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </nav>
+        </div>
+      </header>
+  <main>
+    <h1>Welcome<br>to<br>Kisan<br>Bhartiya</h1>
+    <p>We are an AgriTech startup that aims to revolutionize the way farmers in India grow their crops. Our innovative solutions help farmers increase their productivity, reduce costs, and improve their livelihoods.</p>
+    <img src="src/assets/concept_product.png" alt="Concept product">
+  </main>
+  <!-- Add a range input element to use as the slider switch -->
+<input type="range" min="0" max="1" step="1" id="dark-mode-slider">
+</body>
+</html>
