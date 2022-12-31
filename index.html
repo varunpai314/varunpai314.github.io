@@ -31,21 +31,23 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
     }
     
-    body {
-      background-color: white;
-      color: black;
-      font-family: 'Inter', sans-serif;
-    }
-
-    @media (prefers-color-scheme: dark) {
+   @media (prefers-color-scheme: dark) {
      body {
         background-color: black;
         color: white;
      }
     }
 
+    [data-theme="light"] {
+      body {
+      background-color: white;
+      color: black;
+    }
+    }
+    
     [data-theme="dark"] {
       body {
         background-color: black;
