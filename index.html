@@ -34,7 +34,7 @@
     font-family: 'Inter', sans-serif;
     }
     
-   @media (prefers-color-scheme: dark) {
+   @media (prefers-color-scheme: light) {
      body {
         background-color: black;
         color: white;
@@ -167,24 +167,23 @@ input:focus + .slider {
     }
 
     h1 {
-    
-    font-weight: 800;
-    font-size: 96px;
-    color: #0CD983;
-    margin: 0;
-    text-align: left;
-    white-space: pre-line;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: flex;
+      font-weight: 800;
+      font-size: 96px;
+      color: #0CD983;
+      margin: 0;
+      text-align: left;
+      white-space: pre-line;
+      margin-right: auto;
     }
 
     p {
-    font-size: 24px;
-    line-height: 1.5;
-    align-self: flex-end;  
-    height: calc(24px * 1.5 * 7);
-    overflow: hidden;
+      font-size: 24px;
+      margin-left: auto;
+      width: 500px;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   </style>
 </head>
