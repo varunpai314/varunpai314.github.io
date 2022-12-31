@@ -4,19 +4,27 @@
   <title>Kisan Bhartiya</title>
   <link href='https://fonts.googleapis.com/css?family=Inter:800' rel='stylesheet'>
   <script>
-    // Get a reference to the range input element
-    const darkModeSlider = document.getElementById('dark-mode-slider');
-  
-    // Add an event listener to toggle between light and dark mode when the slider value changes
-    darkModeSlider.addEventListener('input', () => {
-      if (darkModeSlider.value == 1) {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
+    const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
       } else {
-        document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
+        document.documentElement.setAttribute('data-theme', 'light');
+      }    
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    // Detect if the user has a saved theme preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
       }
-    });
+    }
   </script>
   <style>
     html, body {
@@ -24,20 +32,26 @@
     margin: 0;
     padding: 0;
     }
-    body.light-mode {
-    font-family: "Inter", sans-serif;
-    background-color: #000;
-    /* background: url('src/assets/idea1.png'), url('src/assets/idea2.png'); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow-y: scroll;
-    }
-    body.dark-mode {
-    background-color: #333;
-    color: #fff;
-  }
     
+    body {
+      background-color: white;
+      color: black;
+      font-family: 'Inter', sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+     body {
+        background-color: black;
+        color: white;
+     }
+    }
+
+    [data-theme="dark"] {
+      body {
+        background-color: black;
+        color: white;
+      }
+    }
 
     header {
     background-color: #333;
@@ -151,7 +165,7 @@ input:focus + .slider {
     }
 
     h1 {
-    font-family: 'Inter', sans-serif;
+    
     font-weight: 800;
     font-size: 96px;
     color: #0CD983;
